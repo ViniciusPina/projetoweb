@@ -1,0 +1,28 @@
+footer {
+    background-image: url('../assets/footer.svg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    color: rgb(27, 26, 26); 
+    padding: 20px; 
+    text-align: center; 
+}
+
+.footer p {
+    margin: 0;
+    padding: 3rem;
+}
+
+
+.footer a {
+    color: var(--primary-color);
+}
+
+
+.footer {
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+
+.img-fluid{border-radius: 20px;}

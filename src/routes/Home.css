@@ -1,0 +1,142 @@
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #050505;
+}
+
+header {
+    background-color: #ffb9b9;
+    color: #e3d7d7;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: #c9b9b9;
+    text-decoration: none;
+}
+
+#destaque {
+    background-image: url('../assets/img.svg');
+    background-size: cover;
+    text-align: center;
+    padding: 150px 0;
+    color: #141212;
+}
+
+.botao-destaque {
+    background-color: #333;
+    color: #fff;
+    padding: 2px ;
+    text-decoration: none;
+}
+
+#content {
+    background-color: #fff;
+    height: 100%;
+}
+
+#costumes{
+    background-color: beige;
+}
+table {
+    border-collapse: collapse;
+    width: 50%;
+    margin: 0 auto;
+}
+
+table, th, td {
+    border: 2px solid red;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: rgb(132, 130, 130);
+    color: red;
+}
+
+td {
+    background-color: rgb(132, 130, 130);
+    color: red;
+}
+
+#contato {
+    background-color: #fff;
+    padding: 30px;
+}
+
+
+.second-bg {
+    background-image: url('../assets/img1.svg');  /* Estilizando o layout da pagina colocando uma imagem de fundo */
+    background-size: cover;
+    background-position: center center;
+    color: var(--primary-color);
+}
+
+
+:root {  /* Criando variaveis css para otimizar o processo */
+    --primary-color: #0A1128;
+    --white-color: #FFFFFF;
+    --light-gray-color: #EEEEE;
+    --gap: 3rem;
+
+}
+
+.intro-content {
+    position: relative;
+    top: -8rem;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    /*ajustando o grid do conteudo da pagina principal ajustando por 2 fracoes de pagina */
+    gap: var(--gap);
+    height: 100vh;
+}
+
+.intro-text-content,
+.intro-img {
+    /* ajustando a imagem da fracao do grid */
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+
+
+.intro-img img,
+.intro-img svg {
+    max-width: 100%;
+    height: auto;
+}
+
+.main-content {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: var(--gap);
+}
+
+.section {
+    min-height: 100vh;
+}
+
+.menu-sapcing{
+height: 65px;
+}
+

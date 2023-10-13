@@ -1,0 +1,192 @@
+:root {  /* Criando variaveis css para otimizar o processo */
+    --primary-color: #0A1128;
+    --white-color: #FFFFFF;
+    --light-gray-color: #EEEEE;
+    --gap: 3rem;
+
+}
+
+.intro-content {
+    position: relative;
+    top: -8rem;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    /*ajustando o grid do conteudo da pagina principal ajustando por 2 fracoes de pagina */
+    gap: var(--gap);
+    height: 100vh;
+}
+
+.intro-text-content,
+.intro-img {
+    /* ajustando a imagem da fracao do grid */
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+
+
+.intro-img img,
+.intro-img svg {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+.title-content {
+    height: 100vh;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    max-width: 80rem;
+    text-align: center;
+}
+
+
+
+
+
+.grid-one-content {
+    /*estilizando o flex */
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    height: 100vh;
+}
+
+.grid {
+    /*Criando um grid para separar os conteudos de texto na parte da pagina "" */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+}
+
+.grid h3 {
+    font-size: 6rem;
+    /* distanciando os textos em 30pixels */
+}
+
+.grid h3  p {
+    font-size: 4rem;
+    /* distanciando os textos em 30pixels */
+}
+
+.footer p {
+    margin: 0;
+    padding: 3rem;
+}
+
+
+.footer a {
+    color: var(--primary-color);
+}
+
+
+.footer {
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+
+.img-fluid{border-radius: 20px;}
+
+
+.carousel-caption d-none d-md-block{
+color: aqua ;
+}
+
+
+
+* {     /* selecionando todos os elementos com * */
+    margin: 0;
+    padding: 0;
+}
+
+html {     /* cada vez q o usuario escrollar a pagina ,  scroll-behavior: smooth; sera ativado */
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    
+}
+
+body {   /* utilizando as fontes */
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif; /* estilizando as fontes */
+}
+
+h1 {
+    font-size: 6rem;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 6rem;
+    text-transform: uppercase;
+}
+
+h2 { 
+    font-size: 6rem;
+    margin-bottom: 5rem;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: 5rem;
+}
+
+h4 {
+    font-size: 4.5rem;
+}
+
+h5 {
+    font-size: 4rem;
+}
+
+h6 {
+    font-size: 3.5rem;
+}
+
+P{
+    margin-bottom: 5rem;
+}
+
+
+.main-bg {
+    background-image: url('../assets/img.svg');  /* Estilizando o layout da pagina colocando uma imagem de fundo */
+    background-size: cover;
+    background-position: center center;
+    color: var(--primary-color);
+}
+
+.white-bg {
+    background: var(--white-color);
+    color: var(--primary-color);
+}
+
+
+.main-content {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: var(--gap);
+}
+
+.section {
+    min-height: 100vh;
+}
+
+.menu-sapcing{
+height: 65px;
+}
+
+
