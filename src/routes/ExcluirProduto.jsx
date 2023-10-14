@@ -5,36 +5,28 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { Pratos } from '../components/Pratos';
 
 function ExcluirProduto() {
-    /* Hooks - useParams e Navigate */
+    /*Hooks- useParams e Navigate */
     const { id } = useParams();
     const navigate = useNavigate();
 
-    // Filtra o produto com o ID correspondente
     const recProdutoListaById = Pratos.filter((item) => item.id == id);
-
-    // Verifica se o produto foi encontrado
-    if (recProdutoListaById.length === 0) {
-        // Redirecione ou exiba uma mensagem de erro, caso o produto não exista.
-        navigate('/produtos');
-        return null;
-    }
-
-    // Obtenha o primeiro (e único) produto da lista filtrada
-    const produto = recProdutoListaById[0];
-
-    /* Função para excluir o produto */
+    /*Hook-useState */
+    const [produto] = useState({
+        id: recProdutoListaById[0].id,
+        nome: recProdutoListaById[0].nome,
+        desc: recProdutoListaById[0].desc,
+        valor: recProdutoListaById[0].valor,
+    });
+    /*funções */
     const handleExclude = (event) => {
         event.preventDefault();
-
-        // Encontre o índice do produto na lista original de Pratos
-        const indice = Pratos.findIndex((item) => item.id == produto.id);
-
-        if (indice !== -1) {
-            // Remova o produto da lista original
-            Pratos.splice(indice, 1);
-        }
-
-        // Navegue de volta para a tela de produtos
+        let indice;
+        Pratos.forEach((item, index) => {
+            if (item.id == produto.id) {
+                indice = index;
+            }
+        });
+        Pratos.splice(indice, 1);
         navigate('/produtos');
     };
 
@@ -42,16 +34,16 @@ function ExcluirProduto() {
         <section>
             <h1>Excluir Produto</h1>
             <div>
-                <p>Nome: {produto.nome}</p>
-                <p>Desc: {produto.desc}</p>
-                <p>Valor: {produto.valor}</p>
+                <p>Nome : {produto.nome}</p>
+                <p>Desc : {produto.desc}</p>
+                <p>valor : {produto.valor}</p>
             </div>
             <div>
-                {/* Chamando a função handleExclude dentro do botão */}
-                <button onClick={handleExclude}>
+                {/*chamando a função handleExclude dentro do botão*/}
+                <button onClick={handleExclude} >
                     EXCLUIR
                 </button>
-                {/* Chamando o navigate para voltar para a tela de produtos */}
+                {/*chamando o navigate para voltar para a tela produtos */}
                 <button onClick={() => navigate('/produtos')}>
                     CANCELAR
                 </button>

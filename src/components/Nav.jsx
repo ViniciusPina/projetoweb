@@ -28,12 +28,18 @@ function Nav() {
                         <li>
                             <Link to="/produtos">produtos</Link>
                         </li>
+                        <li>
+                            <Link to="/pedido">pedido</Link>
+                        </li>
 
                         <li>
                             <Link to="sobre">Sobre nos</Link>
                         </li>
                         <li>
                             <Link to="/inserirproduto/produto">Cadastrar Produto</Link>
+                        </li>
+                        <li>
+                            <Link to="/inserirpedido">Inserir Pedido</Link>
                         </li>
                         <li>
                             <Link to="/login">LOGIN</Link>

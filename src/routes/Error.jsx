@@ -14,9 +14,6 @@ function Error(){
                 
             </div>
         </section>
-        <section id='intro' class='intro white-bg section'>
-
-        </section>
         </div>
     )
 }

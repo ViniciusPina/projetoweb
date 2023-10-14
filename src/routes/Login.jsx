@@ -1,18 +1,14 @@
-
 import '../routes/login.css'
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import Produtos from './Produtos';
 
 function Login() {
-    /*hook useref ele retorna uma referencia a um elemento ou componente sem ter que ser renderizado novamente e também permite acesso ao DOM */
     const user = useRef();
     const password = useRef();
-    /* pegando o usuario e adcionando ao sessionStorage */
     const getUser = sessionStorage.getItem('userData');
-    /* pegando o senha e adcionando ao sessionStorage */
     const getSenha = sessionStorage.getItem('senhaData');
+    const [buttonClicked, setButtonClicked] = useState(false);
 
-    /*função que verifica se o usuario e senha são validos e grava na sessão */
     const handleSubmit = () => {
         if (user.current.value === 'admin' && password.current.value === '12345') {
             let token =
@@ -21,32 +17,25 @@ function Login() {
             sessionStorage.setItem('userData', 'admin');
             sessionStorage.setItem('senhaData', token);
         } else {
-            alert('usuário e senha inválidos !!!');
+            alert('Usuário e senha inválidos !!!');
         }
+        setButtonClicked(true);
     };
 
     return (
-        <section>
+        <section className="login-container">
             <h1>Login</h1>
-            {/* if ternario*/}
             {getUser && getSenha ? (
                 <Produtos />
             ) : (
-                /* chamando a função handleSubmit dentro do form*/
                 <form onSubmit={handleSubmit}>
-                    <p>
-                        USUÁRIO:
-                        {/* passando a referencia no usuario */}
-                        <input type="text" ref={user} />
-                    </p>
-                    <br />
-                    <p>
-                        SENHA:
-                        {/* passando a referencia na senha */}
-                        <input type="password" ref={password} />
-                    </p>
-                    <br />
-                    <input type="submit" value="Login" />
+                    <p className="red-text">USUÁRIO:</p>
+                    <input type="text" ref={user} className="input-field" />
+                    <p className="red-text">SENHA:</p>
+                    <input type="password" ref={password} className="input-field" />
+                    <button type="submit" className={`login-button ${buttonClicked ? 'clicked' : ''}`}>
+                        {buttonClicked ? 'Logado' : 'Login'}
+                    </button>
                 </form>
             )}
         </section>

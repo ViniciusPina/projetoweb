@@ -1,19 +1,26 @@
-import { } from 'react'
-import '../routes/footer.css'
+import React from 'react';
+import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 function Footer() {
     return (
-        <footer>
-                <h3>@2023-todos os direitos reservados</h3>
-            
-            <ul class="flex justify-between items-center">
-                    <li>&copy; 2023</li>
-                    <li>Feito com Vite + React</li>
-                    <li>Fiap</li>
-                </ul>
-                <p><a rel="nofollow" target="_blank" href="#">Checkpoint-4</a></p>
-                
+        <footer className="footer">
+            <div className="footer-content">
+                <p>Sakura</p>
+                <p>Todos os direitos reservados</p>
+            </div>
+            <div className="social-icons">
+                <a href="https://www.facebook.com">
+                    <FaFacebook className="social-icon" />
+                </a>
+                <a href="https://www.twitter.com">
+                    <FaTwitter className="social-icon" />
+                </a>
+                <a href="https://www.instagram.com">
+                    <FaInstagram className="social-icon" />
+                </a>
+            </div>
         </footer>
-    )
+    );
 }
-export default Footer
+
+export default Footer;
